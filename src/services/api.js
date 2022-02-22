@@ -6,6 +6,11 @@ const PARAMS = {
     page_size: 10
 }
 
+/**
+ * Fetch list of products from 'v2/products'
+ * @param {number} page_size number of rows to be fetched  
+ * @returns {object}  {products,symbols} where products is list of products, and symbols is list of product's symbols
+ */
 export const getProducts = (params = PARAMS) => {
     return new Promise((resolve,reject)=>{
         axios.get(`${BASE_URL}/v2/products`, {
